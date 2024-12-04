@@ -1,0 +1,10 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="right_column">
+  <div class="title">
+    <p>Shows</p>
+  </div>
+    {% for show in shows %}
+    <p class="text">{{ show.title }}, directed by {{ show.director }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

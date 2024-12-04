@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <title>Favorites</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="left-column">
+          <h4 class="credit">kiman heng</h2>
+          <h1 class="main-title">
+            favorites
+          </h1>
+          <a href="{{ url_for('books') }}" class="{% if request.endpoint == 'books' %}active{% endif %}">books</a>
+<a href="{{ url_for('movies') }}" class="{% if request.endpoint == 'movies' %}active{% endif %}">movies</a>
+<a href="{{ url_for('shows') }}" class="{% if request.endpoint == 'shows' %}active{% endif %}">shows</a>
+<a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">about</a>
+        </div>
+
+        {% block content %}{% endblock %}
+
+      </div>
+    </div>
+  </body>
+</html>

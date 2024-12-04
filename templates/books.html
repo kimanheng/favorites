@@ -1,0 +1,10 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="right_column">
+  <div class="title">
+    <p>Books</p>
+  </div>
+  {% for book in books %}
+  <p class="text">{{ book.title }}, written by {{ book.author }}</p>
+  {% endfor %}
+</div>
+{% endblock %}
