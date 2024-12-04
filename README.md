@@ -1,4 +1,4 @@
-<h1>Favoites</h1>
+<h1>Favorites</h1>
 <p>made by kiman heng</p>
 <p>december 2024</p>
 <h3>Description</h3>
