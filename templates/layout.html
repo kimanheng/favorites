@@ -6,7 +6,7 @@
 
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
+      href="{{ url_for('static', filename='css/style.css') }}"
     />
     <title>Favorites</title>
   </head>
@@ -18,10 +18,10 @@
           <h1 class="main-title">
             favorites
           </h1>
-          <a href="{{ url_for('books') }}" class="{% if request.endpoint == 'books' %}active{% endif %}">books</a>
-<a href="{{ url_for('movies') }}" class="{% if request.endpoint == 'movies' %}active{% endif %}">movies</a>
-<a href="{{ url_for('shows') }}" class="{% if request.endpoint == 'shows' %}active{% endif %}">shows</a>
-<a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">about</a>
+          {% set pages = {'books': 'books', 'movies': 'movies', 'shows': 'shows', 'about': 'about'} %}
+          {% for page, title in pages.items() %}
+              <a href="{{ url_for(page) }}" class="{% if request.endpoint == page %}active{% endif %}">{{ title }}</a>
+          {% endfor %}
         </div>
 
         {% block content %}{% endblock %}

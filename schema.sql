@@ -17,5 +17,5 @@ CREATE TABLE movies (
 CREATE TABLE shows (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
-    director TEXT NOT NULL
+    creator TEXT NOT NULL
 );
